@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
+import { Console } from "console";
 dotenv.config();
 export const registerUser = async (req, res) => {
   try {
@@ -67,6 +68,7 @@ export const loginUser = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Internal server errors" });
+    Console.log(error);
   }
 };
 
