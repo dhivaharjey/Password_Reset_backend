@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import crypto from "crypto";
+import bcrypt from "bcryptjs-react";
+// import crypto from "crypto";
 const userSchema = new mongoose.Schema({
   // name: {
   //   type: String,
