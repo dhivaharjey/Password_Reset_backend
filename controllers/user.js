@@ -111,7 +111,7 @@ export const forgotPassword = async (req, res) => {
     user.passwordResetTokenExpires = resetTokenExpires;
     await user.save();
 
-    const link = `http://localhost:5173/reset-password/${resetToken}`;
+    const link = `https://jd-forgot-password.netlify.app/reset-password/${resetToken}`;
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -124,8 +124,16 @@ export const forgotPassword = async (req, res) => {
       from: "example@gmail.com",
       to: email,
       subject: "Password Reset Link",
-      text: link,
-      // html: `<h2>  Click the link to reset password <a href=${link}>click here</a></h2>`,
+      text: "Reset Password",
+      html: `
+      <p>Hello ${user.userName},</p>
+    <p>You have requested to reset your  password. Click the button below to reset it:</p>
+    <a href="${link}">
+      <button style="padding: 10px; background-color: #0A0A0A; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Reset iCloud Password
+      </button>
+    </a>
+      <h2>  Click the link to reset password <a href=${link}>click here</a></h2>`,
     };
 
     transporter.sendMail(mailOptions, function (error) {
