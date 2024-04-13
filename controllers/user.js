@@ -1,10 +1,7 @@
 import User from "../models/user.js";
-import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-
 import crypto from "crypto";
-// import cookieParser from "cookie-parser";
 import nodemailer from "nodemailer";
 dotenv.config();
 export const registerUser = async (req, res) => {
