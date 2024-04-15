@@ -132,7 +132,7 @@ export const forgotPassword = async (req, res) => {
     <p>You have requested to reset your  password. Click the button below to reset it:</p>
     <a href="${link}">
       <button style="padding: 10px; background-color: #0A0A0A; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Reset iCloud Password
+        Reset  Password
       </button>
     </a>
       <h2>  Click the link to reset password <a href=${link}>click here</a></h2>`,
