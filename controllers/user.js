@@ -183,8 +183,8 @@ export const resetPassword = async (req, res) => {
     }
 
     user.password = newPassword;
-    user.passwordResetToken = null;
-    user.passwordResetTokenExpires = null;
+    user.passwordResetToken = undefined;
+    user.passwordResetTokenExpires = undefined;
     user.save();
     res
       .status(200)
