@@ -123,7 +123,7 @@ export const forgotPassword = async (req, res) => {
     });
 
     const mailOptions = {
-      from: "example@gmail.com",
+      from: process.env.USER,
       to: email,
       subject: "Password Reset Link",
       text: "Reset Password",
