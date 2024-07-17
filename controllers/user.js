@@ -185,7 +185,7 @@ export const resetPassword = async (req, res) => {
     user.password = newPassword;
     user.passwordResetToken = null;
     user.passwordResetTokenExpires = null;
-    user.save();
+    await user.save();
     res
       .status(200)
       .json({ status: true, message: "Password reset is successsful" });
