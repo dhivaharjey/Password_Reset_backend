@@ -135,7 +135,8 @@ export const forgotPassword = async (req, res) => {
         Reset  Password
       </button>
     </a>
-      <h2>  Click the link to reset password <a >${link}</a></h2>`,
+      <h2>  Click the link to reset password ${link}</h2>
+      <button> ${link}</button>`,
     };
 
     transporter.sendMail(mailOptions, function (error) {
